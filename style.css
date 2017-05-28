@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   background-color: #fff28f;
   overflow: hidden;
@@ -7,40 +11,150 @@ body {
 .svgcontainer {
   text-align: center;
 }
-.moon {
-  fill: #fbd108;
-}
 .stars {
   fill: #fbd108;
 }
 .craters path {
   fill: #ecb61e;
 }
+.moon {
+  fill: #fbd108;
+}
 
 @keyframes slideInUp {
-  from {
+  0% {
     transform: translate3d(0, 100vh, 0);
     visibility: visible;
   }
-
-  to {
+  30% {
     transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  60% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 100vh, 0);
+    visibility: visible;
   }
 }
 
-svg {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  60% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes wobble {
+  from {
+    transform: none;
+  }
+
+  15% {
+    transform: translate3d(-25%, 0, 0) rotate3d(1, 1, 1, -5deg);
+  }
+
+  30% {
+    transform: translate3d(20%, 0, 0) rotate3d(1, 1, 1, 3deg);
+  }
+
+  45% {
+    transform: translate3d(-15%, 0, 0) rotate3d(1, 1, 1, -3deg);
+  }
+
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(1, 1, 1, 2deg);
+  }
+
+  75% {
+    transform: translate3d(-5%, 0, 0) rotate3d(1, 1, 1, -1deg);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.wobble {
+  animation-name: wobble;
+  animation: wobble-hor-bottom 0.8s both;
+}
+
+.wobble-hor-bottom {
+	-webkit-animation: wobble-hor-bottom 0.8s both;
+	-moz-animation: wobble-hor-bottom 0.8s both;
+	animation: wobble-hor-bottom 0.8s both;
+}
+*/
+.cheesemoon {
   animation-name: slideInUp;
-  animation-duration: 3s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
+}
+
+.stars {
+  opacity: 0;
+  animation: fadeIn 12s infinite, fadeOut 12s infinite;
+}
+
+.lilstar {
+  animation-delay: 1s;
+}
+
+svg {
   width: 700px;
+  max-height: 95vh;
+  margin-top: 3vh;
+  overflow: visible;
 }
 
 @media (max-width: 480px) {
 svg {
     width: 80%;
-
 }
 }
-
-@media (max-height: 480px) {
-svg {
