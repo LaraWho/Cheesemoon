@@ -1,0 +1,46 @@
+body {
+  background-color: #fff28f;
+  overflow: hidden;
+  height: 100%;
+}
+
+.svgcontainer {
+  text-align: center;
+}
+.moon {
+  fill: #fbd108;
+}
+.stars {
+  fill: #fbd108;
+}
+.craters path {
+  fill: #ecb61e;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100vh, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+svg {
+  animation-name: slideInUp;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  width: 700px;
+}
+
+@media (max-width: 480px) {
+svg {
+    width: 80%;
+
+}
+}
+
+@media (max-height: 480px) {
+svg {
